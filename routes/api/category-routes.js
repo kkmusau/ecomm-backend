@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
 router.get('/:id', async(req, res) => {
   // find one category by its `id` value
   try {
+    // findbyPK finds only a single category from the table
     const data = await Category.findByPk(req.params.id , 
     { include: { model: Product},
     });
